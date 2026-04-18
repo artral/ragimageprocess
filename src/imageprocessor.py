@@ -51,6 +51,9 @@ class ImageProcessor:
         }
 
         response = requests.post(self.OPENAI_API_URL, headers=headers, json=payload)
+        print(f"API Response: {response.status_code} - {response.text}")  # Debug print
+        if response.status_code != 200:
+            raise Exception(f"API Error: {response.status_code} - {response.text}")
         return response.json()['choices'][0]['message']['content']
     
     # 4. PROCESSING THE FOLDER

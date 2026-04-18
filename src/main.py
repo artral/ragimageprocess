@@ -3,6 +3,7 @@ from os import path
 from imageprocessor import ImageProcessor
 from chromadbprocess import ChromaDBProcessor
 from worddocprocessor import WordDocumentProcessor
+from image_tagger_gemini import ImageProcessor_Gemini
 from dotenv import load_dotenv
 import os
 
@@ -29,7 +30,7 @@ def Test1():
     chroma_processor.read_dataframe()
     print("Setup complete!")
 
-def main():
+def main_wordProcessor():
     """Main entry point for the RAG word document processor."""
     # Configuration for WordDocumentProcessor
     api_key = os.getenv("OPENAI_API_KEY")  # Replace with your actual OpenAI API key
@@ -43,5 +44,16 @@ def main():
     query_text = "d"  # Example query
     word_processor.query(query_text)  # Query the stored document
     
+def main_imageProcessor():
+    """Main entry point for the RAG image processor."""
+    # Configuration for ImageProcessor
+    api_key = os.getenv("GEMINI_API_KEY")  # Replace with your actual GEMINI API key
+    folder_path = r"C:\work\Python\ragimage\ragimageprocess\image\pizza.jpg"   # Replace with your image folder path
+    
+    # Initialize and use ImageProcessor
+    print("Initializing ImageProcessor...")
+    image_processor = ImageProcessor_Gemini(api_key)
+    image_processor.is_food(folder_path)  # Process the folder of images
 if __name__ == "__main__":
-    main()
+    #)
+    main_imageProcessor()
