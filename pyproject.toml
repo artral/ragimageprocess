@@ -1,11 +1,17 @@
 [project]
-name = "ragimage"
+name = "ragimageprocess"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "chromadb>=1.5.8",
+    "docex>=2.8.7",
+    "docx>=0.2.4",
     "langchain-text-splitters>=1.1.2",
-    "python-docx>=1.2.0",
+    "openai>=2.32.0",
+    "pandas>=3.0.2",
     "requests>=2.33.1",
+    "sentence-transformers>=5.4.1",
+    "wget>=3.2",
 ]

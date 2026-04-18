@@ -1,3 +1,5 @@
+from os import path
+
 from imageprocessor import ImageProcessor
 from chromadbprocess import ChromaDBProcessor
 from worddocprocessor import WordDocumentProcessor
@@ -31,11 +33,12 @@ def main():
     """Main entry point for the RAG word document processor."""
     # Configuration for WordDocumentProcessor
     api_key = os.getenv("OPENAI_API_KEY")  # Replace with your actual OpenAI API key
-    file_path = r"C:\work\Python\ragimage\ragimage\src\doctest.docx"  # Replace with your Word document path
+    file_path = r"./Test.docx"  # Replace with your Word document path
     
     # Initialize and use WordDocumentProcessor
     print("You can double-click")
     word_processor = WordDocumentProcessor()
+    os.path.isfile(file_path) or print(f"File not found: {file_path}")  # Check if file exists
     word_processor.embed_and_store(file_path)  # Process and store the document
     query_text = "d"  # Example query
     word_processor.query(query_text)  # Query the stored document

@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+/chroma_db/841fea59-faab-4606-86c4-1cad681012b8/data_level0.bin
+/chroma_db/841fea59-faab-4606-86c4-1cad681012b8/header.bin
+/chroma_db/841fea59-faab-4606-86c4-1cad681012b8/length.bin
+/chroma_db/841fea59-faab-4606-86c4-1cad681012b8/link_lists.bin
+/chroma_db/chroma.sqlite3
